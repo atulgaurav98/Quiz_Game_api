@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the Quiz Game</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+  />
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./axios.js"></script>
+  <body style="background-color: #afb42b" onload="">
+    <marquee behaviour="scroll" direction="right" scrollamount="18"
+      ><h1 align="center">Welcome to the Quiz Game</h1></marquee
+    >
+
+    <h2 align="center">Choose any level to start..</h2>
+    <br />
+    <br />
+    <br />
+    <center>
+      <a href="#"
+        ><button
+          type="button"
+          id="easy-btn"
+          class="btn btn-primary btn-lg"
+          onclick="location.href='../easy/easy.html'"
+        >
+          Easy
+        </button></a
+      >
+      <br />
+      <br />
+      <a href="#"
+        ><button
+          type="button"
+          id="medium-btn"
+          class="btn btn-primary btn-lg"
+          onclick="location.href='../medium/medium.html'"
+        >
+          Medium
+        </button></a
+      >
+      <br />
+      <br />
+      <a href="#">
+        <button
+          type="button"
+          id="hard-btn"
+          class="btn btn-primary btn-lg"
+          onclick="location.href='../hard/hard.html'"
+        >
+          Hard
+        </button>
+      </a>
+    </center>
+  </body>
+</html>

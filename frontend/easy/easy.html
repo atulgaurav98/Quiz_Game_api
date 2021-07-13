@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game(Easy Mode)</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+      const easyArr = [];
+      const medArr = [];
+      const hardArr = [];
+
+      axios
+        .get(
+          "https://i1ralxrhw7.execute-api.ap-south-1.amazonaws.com/test/getquestions"
+        )
+        .then(function (response) {
+          // handle success
+
+          var globalArr = response.data.body;
+          //console.table(globalArr);
+          globalArr.forEach((element) => {
+            //console.log(element.status);
+            if (element.question_type == "e") {
+              //console.log(element);
+              easyArr.push(element);
+            }
+            if (element.question_type == "m") {
+              medArr.push(element);
+            }
+            if (element.question_type == "h") {
+              hardArr.push(element);
+            }
+          });
+          console.log(easyArr, medArr, hardArr);
+          displayEasy(easyArr);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+
+      //console.log(easyArr);
+      const displayEasy = (easyArr) => {
+        console.log(easyArr);
+        easyArr.forEach((e) => {
+          // `<label>
+          //   <input type="radio" name="question${questionNumber}" value="${letter}">
+          //   ${letter} :
+          //   ${currentQuestion.answers[letter]}
+          // </label>`
+          //question element creation
+          let ele = document.createElement("p");
+          ele.id = e.question_id;
+          ele.innerText = e.questions;
+
+          //break element
+          let brk = document.createElement("br");
+
+        
+          //setting up of created elements
+          let div = document.getElementById("canvas");
+          div.appendChild(ele);
+         
+         });
+      };
+      //console.log(easyArr);
+    </script>
+  </head>
+  <body onload="">
+    <div id="canvas">
+      <p>
+        hii demo
+        <input type="radio" name="options" value="a">898</input>
+      </p>
+    </div>
+  </body>
+</html>
